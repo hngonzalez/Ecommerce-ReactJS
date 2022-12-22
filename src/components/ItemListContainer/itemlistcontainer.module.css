@@ -1,0 +1,5 @@
+.main {
+    height: calc(100vh - 80px);
+    background-image: url('../../../public/img/pizza-bg.jpg');
+    background-size: cover;
+}

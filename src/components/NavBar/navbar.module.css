@@ -1,0 +1,8 @@
+.container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(245, 245, 245);
+    padding: 1rem 2rem;
+    backdrop-filter: blur(100px);
+}
