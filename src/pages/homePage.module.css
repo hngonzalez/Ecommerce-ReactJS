@@ -1,0 +1,53 @@
+.main {
+    min-height: 100vh;
+    background-image: url('../../public/img/background_home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 5%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 350px;
+}
+
+.description h1 {
+    color: #FFFDFA;
+    font-size: 96px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.description span {
+    color: #C06D0A;
+}
+
+.description h5 {
+    color: #FFFDFA;
+    font-size: 24px;
+}
+
+.description {
+    width: 100%;
+}
+
+.description button {
+    width: 200px;
+    margin-top: 20px;
+    padding: 16px 0;
+    border-radius: 4px;
+    background-color: #C06D0A;
+    color: #FFFDFA;
+    font-size: 16px;
+    font-weight:lighter;
+    border: none;
+}
+
+.description button:hover {
+    background-color: #965609;
+    cursor: pointer;
+}
