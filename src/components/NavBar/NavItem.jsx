@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import navitemStyles from "./navitem.module.css";
 
-export default function NavItem(props) {
+export default function NavItem({text, href}) {
 
     function handleClickItem() {
         
@@ -9,7 +10,7 @@ export default function NavItem(props) {
 
     return (
     <li className={navitemStyles.li} onClick={handleClickItem}>
-        {props.text}
+        <Link to={href}>{text}</Link>
     </li>
     )
 }
