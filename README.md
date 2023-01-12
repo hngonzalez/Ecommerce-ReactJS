@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# PreEntrega 2 - GIF de la navegación
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Alt Text](https://github.com/hngonzalez/Ecommerce-ReactJS/blob/main/ai0DyfjgR7.gif?raw=true)
 
 ## Available Scripts
 
