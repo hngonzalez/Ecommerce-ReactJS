@@ -29,8 +29,15 @@
 
 .card .container_available_colors {}
 
+.card a button{
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 .card .btn_buy {
-    width: 100%;
+    width: 80px;
     height: 34px;
     border-radius: 4px;
     background-color: #C06D0A;
@@ -41,4 +48,19 @@
     border: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     outline: none;
+    cursor: pointer;
+}
+
+.card .actions {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.card .actions label {
+    font-size: 24px;
+    color: white;
 }

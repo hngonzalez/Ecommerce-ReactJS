@@ -1,8 +1,23 @@
 .container {
+    height: 100%;
     display: flex;
+    align-items: center;
     border-radius: 4px;
 }
 
-.quantity {
-    
+.container a {
+    min-width: 60px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 4px;
+    background-color: #C06D0A;
+    text-decoration: none;
+}
+
+.container a span {
+    font-weight: bold;
+    color: white;
 }

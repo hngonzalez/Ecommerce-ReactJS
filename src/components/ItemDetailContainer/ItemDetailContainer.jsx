@@ -2,6 +2,7 @@ import NavBar from '../NavBar/NavBar';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProduct } from "../../services/mockService";
+import { getProductById } from '../../services/firebase';
 
 function ItemDetailContainer() {
     const notFound = {
@@ -13,9 +14,8 @@ function ItemDetailContainer() {
     let params = useParams();
   
     useEffect(() => {
-        getProduct(params.itemId)
+        getProductById(params.itemId)
         .then((resp) => {
-            console.log(resp)
             setDetail(resp)
         }).catch((err) => 
             setDetail(notFound)

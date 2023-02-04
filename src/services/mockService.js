@@ -5,7 +5,7 @@ import LTDLP from "../assets/img/glespaul.png"
 import SE1FRS from "../assets/img/se1frs.png"
 import SHHC1FRLH from "../assets/img/shhc1frlh.png"
 
-const products = [
+export const products = [
     {
         id: 1,
         imgUrl: BNXTT,

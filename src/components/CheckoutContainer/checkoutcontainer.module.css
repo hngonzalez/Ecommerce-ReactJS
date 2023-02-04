@@ -1,0 +1,14 @@
+.container {
+  min-height: calc(100vh - 80px);
+  background-color: rgb(180, 180, 180);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout_container {
+  width: 1000px;
+  min-height: 600px;
+  background-color: gray;
+  display: flex;
+}
