@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const cartContext = createContext();
+export const cartContext = createContext({cart: []});
 
 function CartProvider(props) {
     const [cart, setCart] = useState([]);
@@ -68,6 +68,20 @@ function CartProvider(props) {
         
         return total;
     }
+
+    /**
+     * Function to 
+     */
+    function totalPriceInCart(item) {        
+        let total = 0;
+        const temp = [...cart];
+        
+        temp.forEach(item => {
+            total += item.price;
+        })
+        
+        return total;
+    }
     
     /**
      * Function to 
@@ -76,7 +90,7 @@ function CartProvider(props) {
         setCart([]);
     }
     return (
-        <cartContext.Provider value={{cart, addToCart, removeItem, clear, totalItemsInCart}}>
+        <cartContext.Provider value={{cart, addToCart, removeItem, clear, totalItemsInCart, totalPriceInCart}}>
             {props.children}
         </cartContext.Provider>
     )
