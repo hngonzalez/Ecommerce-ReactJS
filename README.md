@@ -30,7 +30,7 @@ Project Link:
 
 <b>Feel.</b> es la entrega final de un proyecto realizado en la cursada de ReactJS (E-Commerce) en la plataforma de Coderhouse y se trata de una aplicacion de venta de instrumentos musicales.
 
-Aún aún en continuo desarrollo y mejoras, implementando diseño propio y aplicando UI/UX.
+Aún en continuo desarrollo y mejoras, implementando diseño propio y aplicando UI/UX.
 <br /><br />
 
 ## ⚙️ Built With
