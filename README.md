@@ -21,7 +21,7 @@ Project Link:
 🌎 <a href="https://feel-ecommerce.netlify.app">View Demo</a> / [View Github](https://github.com/hngonzalez/Ecommerce-ReactJS)
 <br />
 
-<a target="_blank"><img src="https://img.shields.io/badge/Project by: Ng|DEV-%230A0A0A.svg?&style=flat-square&logo=DEV.to&logoColor=white" alt="DEV.to"></a>
+<a><img src="https://img.shields.io/badge/Project by: Ng|DEV-%230A0A0A.svg?&style=flat-square&logo=DEV.to&logoColor=white" alt="DEV.to"></a>
 <br /><br />
 
 <!-- ABOUT THE PROJECT -->
