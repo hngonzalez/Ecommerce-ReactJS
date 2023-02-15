@@ -5,25 +5,59 @@ import { Link } from "react-router-dom";
 import checkout from "./checkoutcontainer.module.css";
 import { createOrder } from '../../services/firebase';
 
-function CheckoutContainer() {
-    const { cart, removeItem, totalPriceInCart } = useContext(cartContext);
-    const [email, setEmail] = useState('');
-    const [validEmail, setValidEmail] = useState(true);
+function InputForm(props) {
+    return (
+        <div className={checkout.form__group}>
+            <label htmlFor="">{props.label}</label>
+            <input type="text" 
+                value={props.value}
+                name={props.name}
+                onChange={props.onChange}
+            />
+        </div>
+    )
+}
 
-    const handleChange = event => {
-        setEmail(event.target.value);
-    };
+function CheckoutContainer() {
+    const { cart, removeItem, totalPriceInCart, clear } = useContext(cartContext);
+    const [userData, setUserData] = useState({
+        nombre: '',
+        apellido: '',
+        email: ''
+    });
+    const [confirmOrder, setConfirmOrder] = useState({
+        executed: false,
+        idOrder: 0
+    });
+
+    const [validEmail, setValidEmail] = useState(true);
+    let fieldsForm = Object.keys(userData);
+
 
     const handlePress = e => {
-        if(e.target.value === email) { 
-         setValidEmail(false);
+        if(e.target.value === userData['email']) { 
+            setValidEmail(false);
+        } else {
+            setValidEmail(true);
         }
     }
 
     const handleCreateOrder = e => {
-        createOrder(cart).then(resp => {
-            console.log(resp);
+        const order = {buyer: userData, cart: cart}
+        createOrder(order).then(resp => {
+            setConfirmOrder({executed: true, idOrder: resp});
+            clear();
         })
+    }
+
+    function onInputChange(evt) {
+        let value = evt.target.value;
+        let inputName = evt.target.name;
+
+        let newState = {...userData};
+
+        newState[inputName] = value;
+        setUserData(newState);
     }
 
     return (
@@ -45,33 +79,27 @@ function CheckoutContainer() {
                     </div>
                     <div className={checkout.checkout_resume}>
                         <div className={checkout.form__container}>
-                            <div className={checkout.form__group}>
-                                <label htmlFor="">Nombre</label>
-                                <input type="text" onChange={handlePress}/>
-                            </div>
-                            <div className={checkout.form__group}>
-                                <label htmlFor="">Apellido</label>
-                                <input type="text" />
-                            </div>
-                            <div className={checkout.form__group}>
-                                <label htmlFor="">Telefono</label>
-                                <input type="text" />
-                            </div>
-                            <div className={checkout.form__group}>
-                                <label htmlFor="">E-mail</label>
-                                <input type="text"
-                                    onChange={handleChange} 
-                                    value={email}
-                                />
-                            </div>
+                            <h3>Completar el formulario para finalizar</h3>
+                            {
+                                fieldsForm.map((field) => (
+                                    <InputForm
+                                        value={userData[field]}
+                                        name={field}
+                                        label={field}
+                                        onChange={onInputChange}
+                                    />
+                                ))
+                            }
                             <div className={checkout.form__group}>
                                 <label htmlFor="">Repetir E-mail</label>
                                 <input type="text" onChange={handlePress}/>
                             </div>
                         </div>
                         <div>
-                            <div>
+                            <div className={checkout.price_container}>
                                 Total: ${totalPriceInCart()}
+                                <span hidden={!confirmOrder.executed}>Order creada!</span>
+                                <span hidden={!confirmOrder.executed}>Número: {confirmOrder.idOrder}</span>
                             </div>
                             <button className={checkout.button_create} disabled={validEmail}
                                 onClick={handleCreateOrder}

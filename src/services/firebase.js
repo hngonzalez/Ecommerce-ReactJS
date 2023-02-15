@@ -75,10 +75,10 @@ export async function getProductById(id) {
 /**
  * Get documents from Firestore
  */
-export async function createOrder(cart) {
+export async function createOrder(order) {
   const orderRef = collection(db, 'order');
 
-  let response = await addDoc(orderRef, {cart: cart});
+  let response = await addDoc(orderRef, order);
 
   return response.id;
 }
